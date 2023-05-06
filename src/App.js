@@ -1,3 +1,4 @@
+import AddPost from "./components/AddPost";
 import PostsElements from "./components/PostsElements";
 import { useGetPostsQuery } from "./services/postsApi";
 
@@ -6,6 +7,7 @@ function App() {
   return (
     <div>
       <h1>Learning Redux Toolkit RTK Query</h1>
+      <AddPost />
       {isLoading && <p>...Loading</p>}
       {isFetching && <p>...Fetching</p>}
       {error && <p>Something went wrong</p>}
