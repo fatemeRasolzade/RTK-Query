@@ -1,4 +1,5 @@
 import AddPost from "./components/AddPost";
+import DeletePost from "./components/DeletePost";
 import EditPost from "./components/EditPost";
 import PostsElements from "./components/PostsElements";
 import { useGetPostsQuery } from "./services/postsApi";
@@ -10,6 +11,7 @@ function App() {
       <h1>Learning Redux Toolkit RTK Query</h1>
       <AddPost />
       <EditPost />
+      <DeletePost />
       {isLoading && <p>...Loading</p>}
       {isFetching && <p>...Fetching</p>}
       {error && <p>Something went wrong</p>}
