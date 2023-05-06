@@ -17,6 +17,14 @@ export const postsApi = createApi({
       }),
       invalidatesTags: ["post"],
     }),
+    editPost: builder.mutation({
+      query: ({ id, ...rest }) => ({
+        url: `/posts/${id}`,
+        method: "PUT",
+        body: { id, ...rest },
+      }),
+      invalidatesTags: ["post"],
+    }),
   }),
 });
 
