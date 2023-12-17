@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { staggeredBaseQueryWithBailOut } from "./interceptor";
 
 export const postsApi = createApi({
   reducerPath: "postsApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://jsonplaceholder.typicode.com/" }),
+  baseQuery: staggeredBaseQueryWithBailOut,
   tagTypes: ["post"], //Auto refetching
   endpoints: (builder) => ({
     getPosts: builder.query({
@@ -35,5 +36,4 @@ export const postsApi = createApi({
   }),
 });
 
-export const { useGetPostsQuery, useAddPostMutation, useEditPostMutation, useDeletePostMutation } =
-  postsApi;
+export const { useGetPostsQuery, useAddPostMutation, useEditPostMutation, useDeletePostMutation } = postsApi;
